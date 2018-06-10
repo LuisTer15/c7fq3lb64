@@ -1,5 +1,4 @@
 class ExpensesController < ApplicationController
-  before_action :authenticate_user!
 
   def index
     if user_signed_in?
@@ -16,7 +15,7 @@ class ExpensesController < ApplicationController
         end
       end
     else
-      redirect_to sign_in_path
+      redirect_to new_user_session_path
     end
   end
 end
